@@ -23,7 +23,7 @@ before_install:
   # Check how much space we've got on this machine.
   - df -h
 
-jscript:
+script:
   - ./ci/setup.sh
   - ./ci/build.sh
   - ./ci/test.sh
