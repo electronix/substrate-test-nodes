@@ -17,6 +17,7 @@ branches:
 env:
   global:
     - RUST_BACKTRACE=1
+    - RUSTFLAGS=" -W unused-extern-crates"
   matrix:
     - RUST_TOOLCHAIN=nightly TARGET=wasm
     - RUST_TOOLCHAIN=stable TARGET=native
@@ -25,9 +26,14 @@ before_install:
   # Check how much space we've got on this machine.
   - df -h
 
-script:
-  - ./ci/setup.sh
-  - ./ci/build.sh
+jobs:
+  include:
+    - stage: Setup
+      script: ./ci/setup.sh
+    - stage: Build
+      script: ./ci/build.sh
+    - stage: Test
+      script: ./ci/test.sh
 
 after_script:
   # Check how much free disk space left after the build
