@@ -8,6 +8,7 @@ cache: cargo
 branches:
   only:
   - master
+  - marcel_travis
 
 env:
   global:
