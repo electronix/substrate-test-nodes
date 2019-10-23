@@ -19,23 +19,14 @@ env:
     - RUST_BACKTRACE=1
     - RUSTFLAGS=" -W unused-extern-crates"
 
-stages:
-  - setup
-  - build
-  - test
-
 before_install:
   # Check how much space we've got on this machine.
   - df -h
 
-jobs:
-  include:
-    - stage: Setup
-      script: ./ci/setup.sh
-    - stage: Build
-      script: ./ci/build.sh
-    - stage: Test
-      script: ./ci/test.sh
+jscript:
+  - ./ci/setup.sh
+  - ./ci/build.sh
+  - ./ci/test.sh
 
 after_script:
   # Check how much free disk space left after the build
