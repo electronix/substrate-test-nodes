@@ -18,9 +18,6 @@ env:
   global:
     - RUST_BACKTRACE=1
     - RUSTFLAGS=" -W unused-extern-crates"
-  matrix:
-    - RUST_TOOLCHAIN=nightly TARGET=wasm
-    - RUST_TOOLCHAIN=stable TARGET=native
 
 stages:
   - setup
