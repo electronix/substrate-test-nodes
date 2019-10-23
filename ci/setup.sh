@@ -14,3 +14,9 @@ fi
 
 # Show rust information
 rustup show
+
+# Clone another repository
+git clone https://github.com/scs/substrate-api-client.git
+
+# Show content of directory
+ls -ls
