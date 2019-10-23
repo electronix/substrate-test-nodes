@@ -19,6 +19,14 @@ env:
     - RUST_BACKTRACE=1
     - RUSTFLAGS=" -W unused-extern-crates"
 
+addons:
+  apt:
+    packages:
+      # To build substrate
+      - cmake
+      - pkg-config
+      - libssl-dev
+
 before_install:
   # Check how much space we've got on this machine.
   - df -h
