@@ -2,6 +2,4 @@
 
 set -eux
 
-rustc --version
-rustup --version
-cargo --version
+cargo build --release

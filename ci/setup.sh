@@ -13,8 +13,4 @@ else
 fi
 
 # Show rust information
-rustc --version
-rustup --version
-cargo --version
-
 rustup show
