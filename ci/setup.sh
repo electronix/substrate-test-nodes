@@ -20,3 +20,5 @@ fi
 rustc --version
 rustup --version
 cargo --version
+
+rustup show
